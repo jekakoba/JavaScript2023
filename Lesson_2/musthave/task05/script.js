@@ -1,4 +1,5 @@
 "use strict"
+// Дано довжину у сантиметрах. Визначати скільки це метрів і кілометрів.
 let centimeters = parseFloat(prompt("Введіть кількість сантиметрів"))
 
 let meters = centimeters / 100
