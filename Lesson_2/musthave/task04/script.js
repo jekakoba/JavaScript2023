@@ -1,4 +1,5 @@
 "use strict"
+// Дано вартість одиниці товару і кількість. Знайти загальну вартість та ПДВ (5% від загальної вартості).
 const priceGoods = parseFloat(prompt("Введіть ціну товару (грн)"))
 const quantityGoods = parseFloat(prompt("Введіть кількість товару"))
 const TAX = parseFloat(prompt("Введіть податок (%)"))
