@@ -6,7 +6,7 @@
 
 
 const names = ["Андрій", "Борис", "Роман", "Афанасій", "Микола"]
-const newArrayNames = names.map(element => element = element[0])
+const newArrayNames = names.map(name => name[0])
 
 document.write(newArrayNames)
 
