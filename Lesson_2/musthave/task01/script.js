@@ -1,5 +1,11 @@
 "use strict"
-
+/*
+Задача 0. Обчислити значення виразів
+S1=a+12+b
+S2=a+b2a 
+S3=3(a+b)c 
+S4=sin⁡(a-b) 
+*/
 const a = parseFloat(prompt("Введіть значення змінної a"))
 const b = parseFloat(prompt("Введіть значення змінної b"))
 const c = parseFloat(prompt("Введіть значення змінної c"))
