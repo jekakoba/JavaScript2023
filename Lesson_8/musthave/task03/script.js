@@ -4,7 +4,7 @@
 */
 
 const names = ["Оленка", "Іштван", "Юрій", "Микола", "Іван", "Оля", "Андрій", "Іван", "Євгеній"]
-function getNameIvan() {
+function getNameIvan(names) {
 	let countName = 0
 	for (let i = 0; i < names.length; i++) {
 		if (names[i] === "Іван")

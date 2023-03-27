@@ -5,15 +5,9 @@
 
 const quantityElements = parseInt(prompt("Введіть кількість елементів масиву", 5));
 
-let halfArray = quantityElements / 2
-let arr = new Array(quantityElements).fill(0)
+let halfArray = Math.floor(quantityElements / 2)
 
-arr.forEach((elem, index, baseArrRef) => {
-	if (index < halfArray) baseArrRef[index] = 1;
-	else
-		baseArrRef[index] = 7;
-});
-
-
+let arr = new Array(quantityElements).fill(1, 0, halfArray).fill(7, halfArray)
 document.write(arr);
+
 

@@ -12,7 +12,7 @@
 const schoolSubjects = parseInt(prompt("Введіть кількість предметів", 5))
 
 //Кількість оцінок
-function getScoreStudent() {
+function getScoreStudent(schoolSubjects) {
 	let itemsScore = []
 	for (let i = 0; i < schoolSubjects; i++) {
 		let randomBalls = Math.floor(1 + Math.random() * 5)

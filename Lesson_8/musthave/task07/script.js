@@ -13,7 +13,7 @@
 //Вводимо платіжки протягом року
 
 //================================================================================//
-function createPaymentOfTheYear(itemsNumber5) {
+function createPaymentOfTheYear() {
 	let array = []
 	for (let i = 1; i <= 12; i++) {
 		let inputPayment = parseFloat(prompt(`Введіть платіжку за ${i} місяць`))

@@ -11,7 +11,7 @@
 //Отримуємо рандомну кількість оцінок
 
 const countScore = parseInt(prompt("Введіть кількість оцінок учня", 5))
-function getCountScoreStudent() {
+function getCountScoreStudent(countScore) {
 	let scoresStudent = []
 	for (let i = 0; i < countScore; i++) {
 		let randomBalls = Math.floor(1 + Math.random() * 12)
@@ -19,8 +19,6 @@ function getCountScoreStudent() {
 	}
 	return scoresStudent
 }
-
-
 
 //=================================================================//
 
@@ -60,7 +58,7 @@ function showBadScore(scores) {
 }
 
 
-const scores = getCountScoreStudent()
+const scores = getCountScoreStudent(countScore)
 
 document.write(`
 <div style="text-align: left">
