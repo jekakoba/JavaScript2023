@@ -1,208 +1,244 @@
-"use strict"
-/*
-При розв’язанні задач намагайтесь використовувати відповідні методи (map, filter, reduce,…) всюди, де це можливо
-Задача. Дано історію цін на цінні папери за деякий період (згенерувати від 1 до 10000)
-	  1)Сформувати новий масив, у якому є тільки ті, що більші за 1000 грн.
-	  2)Сформувати новий масив, у якому є номери тільки тих, що більші за 1000 грн.
-	  3)Сформувати список з тих цін, які більші за попереднє значення
-	  4)Сформувати новий масив, що міститиме значення цін у відсотках стосовно максимального
-	  5)Підрахувати кількість змін цін
-	  6)Визначити, чи є ціна, що менше 1000
-	  7)Визначати, чи усі ціни більше за 1000
-	  8)Підрахувати кількість цін, що більше за 1000
-	  9)Підрахувати суму цін, що більше за 1000
-	  10)Знайти першу ціну, що більше за 1000
-	  11)Знайти індекс першої ціни, що більше за 1000
-	  12)Знайти останню ціну, що більше за 1000
-	  13)Знайти індекс останньої ціни, що більше за 1000
+// "use strict"
+// /*
+// При розв’язанні задач намагайтесь використовувати відповідні методи (map, filter, reduce,…) всюди, де це можливо
+// Задача. Дано історію цін на цінні папери за деякий період (згенерувати від 1 до 10000)
+// 	  1)Сформувати новий масив, у якому є тільки ті, що більші за 1000 грн.
+// 	  2)Сформувати новий масив, у якому є номери тільки тих, що більші за 1000 грн.
+// 	  3)Сформувати список з тих цін, які більші за попереднє значення
+// 	  4)Сформувати новий масив, що міститиме значення цін у відсотках стосовно максимального
+// 	  5)Підрахувати кількість змін цін
+// 	  6)Визначити, чи є ціна, що менше 1000
+// 	  7)Визначати, чи усі ціни більше за 1000
+// 	  8)Підрахувати кількість цін, що більше за 1000
+// 	  9)Підрахувати суму цін, що більше за 1000
+// 	  10)Знайти першу ціну, що більше за 1000
+// 	  11)Знайти індекс першої ціни, що більше за 1000
+// 	  12)Знайти останню ціну, що більше за 1000
+// 	  13)Знайти індекс останньої ціни, що більше за 1000
 
-*/
-//=================Створюємо історію цін від 1 до 1000 за заданий період =======================///
+// */
+// //=================Створюємо історію цін від 1 до 1000 за заданий період =======================///
 
-const startVeluePeriod = parseInt(prompt("Введіть початковий діапазон періоду", 1))
-const endVeluePeriod = parseInt(prompt("Введіть кінцевий діапазон періоду", 12))
+// const startVeluePeriod = parseInt(prompt("Введіть початковий діапазон періоду", 1))
+// const endVeluePeriod = parseInt(prompt("Введіть кінцевий діапазон періоду", 12))
 
-function getHistoryPriseOfThePeriod(startVeluePeriod, endVeluePeriod) {
-	let priceList = []
-	for (let i = startVeluePeriod; i <= endVeluePeriod; i++) {
-		let randomNumberPrice = Math.floor(Math.random() * 10000) + 1;
-		priceList.push(randomNumberPrice)
-	}
+// function getHistoryPriseOfThePeriod(startVeluePeriod, endVeluePeriod) {
+// 	let priceList = []
+// 	for (let i = startVeluePeriod; i <= endVeluePeriod; i++) {
+// 		let randomNumberPrice = Math.floor(Math.random() * 10000) + 1;
+// 		priceList.push(randomNumberPrice)
+// 	}
 
-	return priceList
-}
-
-const historyPriseOfThePeriod = getHistoryPriseOfThePeriod(startVeluePeriod, endVeluePeriod)
-console.log(historyPriseOfThePeriod);
-document.write(`Список цін — ${historyPriseOfThePeriod}`)
-//=============================================================================================//
-// 1)Сформувати новий масив, у якому є тільки ті, що більші за 1000 грн.
-
-const numberLarge_1000 = historyPriseOfThePeriod.filter(element =>
-	element > 1000 ? element : 0
-)
-console.log(numberLarge_1000);
-//=============================================================================================//
-// 2)Сформувати новий масив, у якому є номери тільки тих, що більші за 1000 грн.
-const indexNumberLarge_100 = historyPriseOfThePeriod.reduce(
-	(prevValue, element, index) => {
-		if (element > 1000) {
-			prevValue.push(index)
-		}
-		else prevValue
-		return prevValue
-	}, [])
-
-console.log(indexNumberLarge_100);
-//=============================================================================================//
-// 3)Сформувати список з тих цін, які більші за попереднє значення
-
-//Reduce
-
-const bigPreliminaryValue = historyPriseOfThePeriod.reduce(
-	(prevValue, element, index, baseArrRef) => {
-		if (element > baseArrRef[index - 1]) {
-			prevValue.push(element)
-		}
-		else prevValue
-		return prevValue
-	}, [])
-
-console.log(bigPreliminaryValue);
-// Цикл
-
-// let prevValue = []
-// for (let i = 1; i <= historyPriseOfThePeriod.length; i++) {
-// 	if (historyPriseOfThePeriod[i] > historyPriseOfThePeriod[i - 1])
-// 		prevValue.push(historyPriseOfThePeriod[i])
+// 	return priceList
 // }
 
-// console.log(prevValue);
-//=============================================================================================//
+// const historyPriseOfThePeriod = getHistoryPriseOfThePeriod(startVeluePeriod, endVeluePeriod)
+// console.log(historyPriseOfThePeriod);
+// document.write(`Список цін — ${historyPriseOfThePeriod}`)
+// //=============================================================================================//
+// // 1)Сформувати новий масив, у якому є тільки ті, що більші за 1000 грн.
 
-// 4)Сформувати новий масив, що міститиме значення цін у відсотках стосовно максимального
-const maxNum = Math.max(...historyPriseOfThePeriod)
-const interestValue = historyPriseOfThePeriod.map(element =>
+// const numberLarge_1000 = historyPriseOfThePeriod.filter(element =>
+// 	element > 1000 ? element : 0
+// )
+// console.log(numberLarge_1000);
+// //=============================================================================================//
+// // 2)Сформувати новий масив, у якому є номери тільки тих, що більші за 1000 грн.
+// const indexNumberLarge_100 = historyPriseOfThePeriod.reduce(
+// 	(prevValue, element, index) => {
+// 		if (element > 1000) {
+// 			prevValue.push(index)
+// 		}
+// 		else prevValue
+// 		return prevValue
+// 	}, [])
 
-	((element * 100 / maxNum).toFixed(2))
+// console.log(indexNumberLarge_100);
+// //=============================================================================================//
+// // 3)Сформувати список з тих цін, які більші за попереднє значення
 
-)
-console.log(interestValue);
+// //Reduce
 
-//=============================================================================================//
+// const bigPreliminaryValue = historyPriseOfThePeriod.reduce(
+// 	(prevValue, element, index, baseArrRef) => {
+// 		if (element > baseArrRef[index - 1]) {
+// 			prevValue.push(element)
+// 		}
+// 		else prevValue
+// 		return prevValue
+// 	}, [])
 
-// 5)Підрахувати кількість змін цін
+// console.log(bigPreliminaryValue);
+// // Цикл
 
-//Цикл
+// // let prevValue = []
+// // for (let i = 1; i <= historyPriseOfThePeriod.length; i++) {
+// // 	if (historyPriseOfThePeriod[i] > historyPriseOfThePeriod[i - 1])
+// // 		prevValue.push(historyPriseOfThePeriod[i])
+// // }
 
-// let countChanges = 0
-// for (let i = 1; i <= historyPriseOfThePeriod.length; i++) {
-// 	historyPriseOfThePeriod[i] !== historyPriseOfThePeriod[i - 1] ? countChanges++ : countChanges
-// }
+// // console.log(prevValue);
+// //=============================================================================================//
+
+// // 4)Сформувати новий масив, що міститиме значення цін у відсотках стосовно максимального
+// const maxNum = Math.max(...historyPriseOfThePeriod)
+// const interestValue = historyPriseOfThePeriod.map(element =>
+
+// 	((element * 100 / maxNum).toFixed(2))
+
+// )
+// console.log(interestValue);
+
+// //=============================================================================================//
+
+// // 5)Підрахувати кількість змін цін
+
+// //Цикл
+
+// // let countChanges = 0
+// // for (let i = 1; i <= historyPriseOfThePeriod.length; i++) {
+// // 	historyPriseOfThePeriod[i] !== historyPriseOfThePeriod[i - 1] ? countChanges++ : countChanges
+// // }
+
+// // console.log(countChanges);
+
+// //Reduce
+
+// const countChanges = historyPriseOfThePeriod.reduce(
+// 	(prevChanges, element, index, baseArrRef) =>
+// 		element !== baseArrRef[index - 1] ? prevChanges + 1 : prevChanges
+// 	, 0)
 
 // console.log(countChanges);
 
-//Reduce
+// //=============================================================================================//
 
-const countChanges = historyPriseOfThePeriod.reduce(
-	(prevChanges, element, index, baseArrRef) =>
-		element !== baseArrRef[index - 1] ? prevChanges + 1 : prevChanges
-	, 0)
+// // 6)Визначити, чи є ціна, що менше 1000
 
-console.log(countChanges);
+// const priceLess_1000 = historyPriseOfThePeriod.some(element => element < 1000)
+// console.log(priceLess_1000);
 
-//=============================================================================================//
+// //=============================================================================================//
 
-// 6)Визначити, чи є ціна, що менше 1000
+// // 7)Визначати, чи усі ціни більше за 1000
+// const priceMore_1000 = historyPriseOfThePeriod.every(element => element > 1000)
+// console.log(priceMore_1000);
 
-const priceLess_1000 = historyPriseOfThePeriod.some(element => element < 1000)
-console.log(priceLess_1000);
+// //=============================================================================================//
 
-//=============================================================================================//
+// // 8)Підрахувати кількість цін, що більше за 1000
 
-// 7)Визначати, чи усі ціни більше за 1000
-const priceMore_1000 = historyPriseOfThePeriod.every(element => element > 1000)
-console.log(priceMore_1000);
+// const countPriceMore_1000 = historyPriseOfThePeriod.reduce(
+// 	(prevCountPrice, element) =>
+// 		element > 1000 ? prevCountPrice + 1 : prevCountPrice
+// 	, 0)
+// console.log(countPriceMore_1000);
 
-//=============================================================================================//
+// //=============================================================================================//
 
-// 8)Підрахувати кількість цін, що більше за 1000
+// // 9)Підрахувати суму цін, що більше за 1000
 
-const countPriceMore_1000 = historyPriseOfThePeriod.reduce(
-	(prevCountPrice, element) =>
-		element > 1000 ? prevCountPrice + 1 : prevCountPrice
-	, 0)
-console.log(countPriceMore_1000);
-
-//=============================================================================================//
-
-// 9)Підрахувати суму цін, що більше за 1000
-
-const sumNumbersMore_1000 = historyPriseOfThePeriod.reduce(
-	(prevSum, element) =>
-		element > 1000 ? prevSum + element : prevSum
-	, 0)
+// const sumNumbersMore_1000 = historyPriseOfThePeriod.reduce(
+// 	(prevSum, element) =>
+// 		element > 1000 ? prevSum + element : prevSum
+// 	, 0)
 
 
-console.log(sumNumbersMore_1000);
-//=============================================================================================//
+// console.log(sumNumbersMore_1000);
+// //=============================================================================================//
 
-// 10)Знайти першу ціну, що більше за 1000
+// // 10)Знайти першу ціну, що більше за 1000
 
-const priceFirstNumberMore_1000 = historyPriseOfThePeriod.find(element => element > 1000)
-console.log(priceFirstNumberMore_1000);
+// const priceFirstNumberMore_1000 = historyPriseOfThePeriod.find(element => element > 1000)
+// console.log(priceFirstNumberMore_1000);
 
-//=============================================================================================//
+// //=============================================================================================//
 
-// 11)Знайти індекс першої ціни, що більше за 1000
+// // 11)Знайти індекс першої ціни, що більше за 1000
 
-const firstIndexNumberMore_1000 = historyPriseOfThePeriod.findIndex(element => element > 1000)
-console.log(firstIndexNumberMore_1000);
+// const firstIndexNumberMore_1000 = historyPriseOfThePeriod.findIndex(element => element > 1000)
+// console.log(firstIndexNumberMore_1000);
 
 
-//=============================================================================================//
-// 12)Знайти останню ціну, що більше за 1000
+// //=============================================================================================//
+// // 12)Знайти останню ціну, що більше за 1000
 
-const priceLastNumberMore_1000 = historyPriseOfThePeriod.findLast(element => element > 1000)
-console.log(priceLastNumberMore_1000);
+// const priceLastNumberMore_1000 = historyPriseOfThePeriod.findLast(element => element > 1000)
+// console.log(priceLastNumberMore_1000);
 
-//========================================================================//
-// 13)Знайти індекс останньої ціни, що більше за 1000
+// //========================================================================//
+// // 13)Знайти індекс останньої ціни, що більше за 1000
 
-const lastIndexNumberMore_1000 = historyPriseOfThePeriod.findLastIndex(element => element > 1000)
-console.log(lastIndexNumberMore_1000);
+// const lastIndexNumberMore_1000 = historyPriseOfThePeriod.findLastIndex(element => element > 1000)
+// console.log(lastIndexNumberMore_1000);
 
-//========================================================================//
+// //========================================================================//
 
-document.write(`
-<p>1)Сформувати новий масив, у якому є тільки ті, що більші за 1000 грн:</p>
-<p>${numberLarge_1000}</p>
-<p>2)Сформувати новий масив, у якому є номери тільки тих, що більші за 1000 грн:</p>
-<p>${indexNumberLarge_100}</p>
-<p>3)Сформувати список з тих цін, які більші за попереднє значення:</p>
-<p>${bigPreliminaryValue}</p>
-<p>4)Сформувати новий масив, що міститиме значення цін у відсотках стосовно максимального:</p>
-<p>${interestValue}</p>
-<p>5)Підрахувати кількість змін цін:</p>
-<p>${countChanges}</p>
-<p>6)Визначити, чи є ціна, що менше 1000:</p>
-<p>${priceLess_1000}</p>
-<p>7)Визначати, чи усі ціни більше за 1000:</p>
-<p>${priceMore_1000}</p>
-<p>8)Підрахувати кількість цін, що більше за 1000:</p>
-<p>${countPriceMore_1000}</p>
-<p>9)Підрахувати суму цін, що більше за 1000:</p>
-<p>${sumNumbersMore_1000}</p>
-<p>10)Знайти першу ціну, що більше за 1000:</p>
-<p>${priceFirstNumberMore_1000}</p>
-<p>11)Знайти індекс першої ціни, що більше за 1000:</p>
-<p>${firstIndexNumberMore_1000}</p>
-<p>12)Знайти останню ціну, що більше за 1000:</p>
-<p>${priceLastNumberMore_1000}</p>
-<p>13)Знайти індекс останньої ціни, що більше за 1000:</p>
-<p>${lastIndexNumberMore_1000}</p>
-`)
+// document.write(`
+// <p>1)Сформувати новий масив, у якому є тільки ті, що більші за 1000 грн:</p>
+// <p>${numberLarge_1000}</p>
+// <p>2)Сформувати новий масив, у якому є номери тільки тих, що більші за 1000 грн:</p>
+// <p>${indexNumberLarge_100}</p>
+// <p>3)Сформувати список з тих цін, які більші за попереднє значення:</p>
+// <p>${bigPreliminaryValue}</p>
+// <p>4)Сформувати новий масив, що міститиме значення цін у відсотках стосовно максимального:</p>
+// <p>${interestValue}</p>
+// <p>5)Підрахувати кількість змін цін:</p>
+// <p>${countChanges}</p>
+// <p>6)Визначити, чи є ціна, що менше 1000:</p>
+// <p>${priceLess_1000}</p>
+// <p>7)Визначати, чи усі ціни більше за 1000:</p>
+// <p>${priceMore_1000}</p>
+// <p>8)Підрахувати кількість цін, що більше за 1000:</p>
+// <p>${countPriceMore_1000}</p>
+// <p>9)Підрахувати суму цін, що більше за 1000:</p>
+// <p>${sumNumbersMore_1000}</p>
+// <p>10)Знайти першу ціну, що більше за 1000:</p>
+// <p>${priceFirstNumberMore_1000}</p>
+// <p>11)Знайти індекс першої ціни, що більше за 1000:</p>
+// <p>${firstIndexNumberMore_1000}</p>
+// <p>12)Знайти останню ціну, що більше за 1000:</p>
+// <p>${priceLastNumberMore_1000}</p>
+// <p>13)Знайти індекс останньої ціни, що більше за 1000:</p>
+// <p>${lastIndexNumberMore_1000}</p>
+// `)
 
+//==================================================Додаткові================================================================//
+
+//1)Заполнить массив нулями, кроме первого и последнего элементов, которые должны быть равны единице.
+
+let arr = new Array(10).fill(1, 0, 1).fill(0, 1, length - 1).fill(1, length - 1)
+console.log(arr);
+
+
+//2) Заполнить массив нулями и единицами, при этом данные значения чередуются, начиная с нуля.
+
+
+// let arr2 = []
+
+// for (let i = 0; i < 10; i++) {
+// 	arr2.push(0)
+// 	for (let i = 0; i < 1; i++) {
+// 		arr2.push(1)
+// 	}
+
+// }
+
+// console.log(arr2);
+
+
+// //3) Заполнить массив последовательными нечетными числами, начиная с единицы
+
+// let arr3 = []
+// for (let i = 1; i <= 17; i++) {
+// 	if (i % 2 === 0) {
+// 		continue
+// 	} else {
+// 		arr3.push(i)
+// 	}
+
+// }
+// console.log(arr3);
 
 
 
