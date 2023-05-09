@@ -19,9 +19,9 @@ console.log(arr);
 //Ліва верхня область
 
 let sum1 = 0
-
-for (let rowNumber = 0; rowNumber < Math.floor(arr.length / 2); rowNumber++) {
-	for (let columnNumber = 0; columnNumber < Math.floor(arr[rowNumber].length / 2); columnNumber++) {
+let midRow = Math.floor(arr.length / 2)
+for (let rowNumber = 0; rowNumber < midRow; rowNumber++) {
+	for (let columnNumber = 0; columnNumber < arr[0].length / 2; columnNumber++) {
 		sum1 += arr[rowNumber][columnNumber]
 	}
 }
@@ -33,9 +33,13 @@ console.log(sum1);
 
 //Права верхня область
 let sum2 = 0
+let midRow_2 = Math.floor(arr.length / 2)
 
-for (let rowNumber = 0; rowNumber < Math.floor(arr.length / 2); rowNumber++) {
-	for (let columnNumber = Math.floor(arr[rowNumber].length / 2); columnNumber < arr[rowNumber].length; columnNumber++) {
+for (let rowNumber = 0; rowNumber < midRow_2; rowNumber++) {
+
+	let midColumn = Math.floor(arr[rowNumber].length / 2)
+
+	for (let columnNumber = midColumn; columnNumber < arr[rowNumber].length; columnNumber++) {
 		sum2 += arr[rowNumber][columnNumber]
 	}
 }
@@ -48,8 +52,9 @@ console.log(sum2);
 //Ліва нижня область
 
 let sum3 = 0
-
-for (let rowNumber = Math.floor(arr.length / 2); rowNumber < arr.length; rowNumber++) {
+let midRow_3 = Math.floor(arr.length / 2)
+for (let rowNumber = midRow_3; rowNumber < arr.length; rowNumber++) {
+	let midColumn_2 = Math.floor(arr[rowNumber].length / 2)
 	for (let columnNumber = 0; columnNumber < Math.floor(arr[rowNumber].length / 2); columnNumber++) {
 		sum3 += arr[rowNumber][columnNumber]
 	}
@@ -62,9 +67,10 @@ console.log(sum3);
 //Права нижня область
 
 let sum4 = 0
-
-for (let rowNumber = Math.floor(arr.length / 2); rowNumber < arr.length; rowNumber++) {
-	for (let columnNumber = Math.floor(arr[rowNumber].length / 2); columnNumber < arr[rowNumber].length; columnNumber++) {
+let midRow_4 = Math.floor(arr.length / 2)
+for (let rowNumber = midRow_4; rowNumber < arr.length; rowNumber++) {
+	let midColumn_3 = Math.floor(arr[rowNumber].length / 2)
+	for (let columnNumber = midColumn_3; columnNumber < arr[rowNumber].length; columnNumber++) {
 		sum4 += arr[rowNumber][columnNumber]
 
 	}
@@ -77,11 +83,11 @@ console.log(sum4);
 //Задача 5. Суму парних рядків
 let sumPairedLines = 0
 
-for (let rowNumber = 0; rowNumber < arr.length; rowNumber++) {
+for (let rowNumber = 0; rowNumber < arr.length; rowNumber += 2) {
 	for (let columnNumber = 0; columnNumber < arr[rowNumber].length; columnNumber++) {
-		if (columnNumber % 2 === 0)
-			sumPairedLines += arr[rowNumber][columnNumber]
+		sumPairedLines += arr[rowNumber][columnNumber]
 	}
+
 }
 
 console.log(sumPairedLines);
@@ -154,6 +160,100 @@ document.write(`
 
 
 //==============================================================Полігон з практикою (Не ДЗ)==============================================================
+
+// Задача. Дано зріст учнів у школі (у кожному із класів кількість учнів може бути різною). Знайти :
+// 1)найвищого учня у школі
+// 2)найвищого учня у кожному класі
+
+
+
+//=========================================================================================================//
+
+function getRandomNumbers(minValue, maxValue) {
+	return minValue + Math.floor(Math.random() * (maxValue - minValue + 1))
+
+}
+
+//================Створємо двовимірний масив=================//
+
+function createArray(classNumber, minStundets, maxStudents, minHeight, maxHeight) {
+
+	const table = []
+
+	for (let classes = 0; classes < classNumber; classes++) {
+		const row = []
+		let studentArr = getRandomNumbers(minStundets, maxStudents)
+
+		for (let students = 0; students < studentArr; students++) {
+			let height = getRandomNumbers(minHeight, maxHeight)
+			row.push(height)
+		}
+		table.push(row)
+	}
+	return table
+}
+
+
+const array = createArray(11, 10, 30, 100, 200)
+
+console.log(array);
+
+//==========================================Знаходимо найвищого учня в школі===============================================================//
+
+
+// function getHighestStudent(array) {
+
+// 	let maxNum = array[0][0]
+// 	for (const classes of array) {
+// 		for (const students of classes) {
+// 			if (students > maxNum) {
+// 				maxNum = students
+// 			}
+// 		}
+// 	}
+// 	return maxNum
+// }
+// const highestStudent = getHighestStudent(array)
+
+// console.log(highestStudent);
+
+// let maxValue = array.reduce((prevValue, row) => {
+// 	const rowMax = row.reduce((rowValue, value) => Math.max(rowValue, value), 0)
+// 	return Math.max(prevValue, rowMax)
+// }
+// 	, 0)
+
+
+
+
+
+
+
+
+const maxValue = array.reduce((prevValue, row) => {
+	const rowMax = row.reduce((rowValue, value) => Math.max(rowValue, value), 0)
+	return Math.max(prevValue, rowMax)
+}, 0)
+
+
+console.log(maxValue);
+
+//==========================================Знаходимо найвищого учня в кожному класі===============================================================//
+
+
+const result = array.map((row) => {
+	const maxVal = Math.max(...row);
+	return maxVal
+});
+
+
+console.log(result);
+
+
+
+
+
+
 
 
 

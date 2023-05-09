@@ -55,14 +55,13 @@ console.log(table);
 
 //1) загальний прибуток кожного масиву за тиждень;
 
-let allSum = 0
-for (const row of table) {
-	for (const element of row) {
-		allSum += element
-
+for (let store = 0; store < table.length; store++) {
+	let weekSum = 0
+	for (let day = 0; day < table[store].length; day++) {
+		weekSum += table[store][day]
 	}
+	console.log(`Прибуток ${store + 1} магазину за тиждень — ${weekSum}`);
 }
-console.log(allSum);
 
 //===========================================================================//
 
@@ -109,20 +108,24 @@ console.log(`Загальний прибуток за вихідні дні — 
 //===========================================================================//
 
 // 5) максимальний прибуток за середу
+let arr = [
+	[2, 18, 3, 1, 35, 43, 2],
+	[9, 0, 1, 6, 20, 3084, 488],
+	[14, 56, 10, 17, 4987, 40, 0],
+	[83, 0, 2, 19, 409, 2299, 3],
+	[53, 99, 2, 12, 3008, 377, 1],
+	[62, 11, 0, 22, 2098, 387, 3],
+]
+let maxNum = 0
 
-let maxNum = []
-let result;
-
-for (let store = 0; store < table.length; store++) {
-	for (let day = 0; day < table[store].length; day++) {
-		if (day === 2) {
-			maxNum.push(table[store][day])
-		}
+for (let day = 0; day < arr.length; day++) {
+	if (arr[day][2] > maxNum) {
+		maxNum = arr[day][2];
 	}
-	result = Math.max(...maxNum)
 }
+console.log(arr);
+console.log(maxNum);
 
-console.log(result);
 
 //===========================================================================//
 // 6) сформувати загальний список (одновимірний масив) зі значенням, які що більші за 200
@@ -137,6 +140,8 @@ for (const row of table) {
 
 	}
 }
+
+
 
 console.log(arrMore_200ForOf);
 
