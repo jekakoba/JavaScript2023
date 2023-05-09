@@ -85,11 +85,11 @@ let sitesCompany = [
 // 1) загальну вартість усіх сайтів
 
 //==================================for of============================//
-// let totalPrice = 0
-// for (const sites of sitesCompany) {
-// 	totalPrice += sites.price
-// }
-// console.log(totalPrice);
+let totalPrice = 0
+for (const sites of sitesCompany) {
+	totalPrice += sites.price
+}
+console.log(totalPrice);
 
 //===================================for============================//
 
