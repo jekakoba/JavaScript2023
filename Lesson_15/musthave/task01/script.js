@@ -27,11 +27,17 @@ let obj2 = {
 
 }
 
-let sum = obj1.getSum.call(obj1)
-console.log(sum);
 
-let product = obj2.getProduct.apply(obj2, [3, 15])
-console.log(product);
+console.log(obj1.getSum());
+
+let sum2 = obj1.getSum.call(obj2)
+console.log(sum2);
+
+
+console.log(obj2.getProduct(1, 10));
+
+let product2 = obj2.getProduct.call(obj1, 3, 25)
+console.log(product2);
 
 
 
