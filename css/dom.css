@@ -1,0 +1,441 @@
+body {
+	background-color: rgb(171, 217, 237);
+
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.button {}
+
+.title-dom {
+	font-size: 20px;
+	line-height: 1.3;
+	margin-bottom: 20px;
+}
+
+.box {
+	max-width: 1300px;
+	margin: 0 auto;
+	padding: 30px 15px;
+	display: grid;
+	gap: 20px;
+}
+
+.block {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 20px 50px;
+	align-items: start;
+}
+
+@media (max-width:991px) {
+	.block {
+		grid-template-columns: auto;
+	}
+}
+
+.inputs {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 20px;
+}
+
+.inputs input {
+	width: 100%;
+	padding: 0px 15px;
+	height: 40px;
+	border-radius: 4px;
+}
+
+.table-box__inputs {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 20px;
+	margin-bottom: 20px;
+}
+
+.table-box__inputs input {
+	width: 100%;
+	padding: 0px 15px;
+	height: 40px;
+	border-radius: 4px;
+}
+
+.table-box__inputs button {
+	grid-column: span 2;
+	border-radius: 4px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px 10px;
+	cursor: pointer;
+}
+
+input {
+	/* width: 100%;
+	padding: 0px 15px;
+	height: 40px;
+	border-radius: 4px; */
+}
+
+input::placeholder {
+	color: rgb(140, 136, 136);
+	font-size: 10px;
+}
+
+table {
+	width: 100%;
+	font-weight: 900;
+	border-collapse: collapse;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	grid-column: span 2;
+	overflow-x: auto;
+	padding-bottom: 15px;
+}
+
+table tr {
+	display: flex;
+	gap: 10px;
+}
+
+table td {
+	display: inline-block;
+	background-color: rgb(141, 208, 197);
+	border-radius: 8px;
+	padding: 5px 15px;
+	box-shadow: 1px 1px 1px 1px black;
+	color: white;
+}
+
+/*==================Задача1============================*/
+
+
+.calculator {}
+
+.calculator__title {}
+
+.calculator__box {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 10px;
+}
+
+.calculator__wrapper {
+	display: grid;
+	gap: 5px;
+}
+
+.calculator__wrapper button {
+	padding: 5px 10px;
+	cursor: pointer;
+	border: 1px solid black;
+}
+
+.calculator__wrapper input {
+	width: 100%;
+	padding: 0px 15px;
+	height: 40px;
+	border-radius: 4px;
+}
+
+.calculator__wrapper:nth-child(3) {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-column: span 2;
+}
+
+.calculator__wrapper:nth-child(4) {
+	grid-column: span 2;
+}
+
+.calculator__label {
+	letter-spacing: 2px;
+}
+
+
+
+@media (max-width: 600px) {
+	.calculator__wrapper.calculator__wrapper_buttons {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+.calculator__input {}
+
+
+
+/*==================Задача2============================*/
+.converter {}
+
+.converter__title {}
+
+
+.converter__box {
+	display: grid;
+	gap: 5px;
+
+}
+
+.converter__box input {
+	width: 100%;
+	padding: 0px 15px;
+	height: 40px;
+	border-radius: 4px;
+
+}
+
+.converter__box:not(:last-child) {
+	margin-bottom: 10px;
+}
+
+.converter button {
+	display: inline-block;
+	padding: 5px 10px;
+	cursor: pointer;
+	border: 1px solid black;
+	margin-bottom: 10px;
+
+}
+
+.converter__label {
+	letter-spacing: 2px;
+}
+
+.converter__input {}
+
+/*==================Задача3============================*/
+
+.birthday {}
+
+.birthday__title {}
+
+.birthday__wrapper {
+	display: grid;
+	align-items: center;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 20px;
+}
+
+@media (max-width: 600px) {
+	.birthday__wrapper {
+		grid-template-columns: auto;
+	}
+}
+
+.birthday__box {
+	margin-bottom: 10px;
+}
+
+.birthday__label {
+	display: inline-block;
+	letter-spacing: 2px;
+	margin-bottom: 5px;
+}
+
+.birthday__input {
+	width: 100%;
+	padding: 0px 15px;
+	height: 40px;
+	border-radius: 4px;
+}
+
+.birthday__result {
+	font-size: 18px;
+	letter-spacing: 2px;
+	font-weight: 700;
+}
+
+
+/*==================Задача4============================*/
+
+
+
+.desire__result {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	gap: 5px;
+	font-size: 20px;
+	letter-spacing: 2px;
+	line-height: 1.3;
+	font-weight: 900;
+	flex-wrap: wrap;
+}
+
+.desire__result div {
+	padding: 10px;
+}
+
+.desire__result div:nth-child(1) {
+	background-color: rgb(217, 158, 158);
+}
+
+.desire__result div:nth-child(2) {
+	background-color: rgb(91, 233, 184);
+
+}
+
+.desire__result div:nth-child(3) {
+	background-color: rgb(214, 133, 244);
+
+}
+
+
+
+/*==================Задача6============================*/
+
+
+.scores button {
+	padding: 10px 20px;
+	font-size: 15px;
+
+}
+
+#buttonTable {
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+
+#sumScores {
+	cursor: pointer;
+	margin-bottom: 10px;
+}
+
+.scores__title {}
+
+.scores__line {
+	display: grid;
+	gap: 10px;
+	margin-bottom: 20px;
+}
+
+.scores__line input {
+	width: 100%;
+	padding: 0px 15px;
+	height: 40px;
+	border-radius: 4px;
+}
+
+.scores__label {
+	letter-spacing: 2px;
+}
+
+.scores__input {
+	width: 100%;
+	padding: 0px 15px;
+	height: 40px;
+	border-radius: 4px;
+}
+
+.scores__box {
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+	margin-bottom: 10px;
+}
+
+
+.scores__result {
+	font-weight: 900;
+	font-size: 18px;
+}
+
+.travel {}
+
+.travel__title {}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.travel__input {}
+
+.travel {
+	display: flex;
+	flex-direction: column;
+}
+
+
+
+.travel button {
+	padding: 10px 20px;
+	letter-spacing: 3px;
+	font-size: 20px;
+	margin: 0 auto;
+	justify-self: center;
+	cursor: pointer;
+}
+
+.travel button:not(:last-child) {
+	margin-bottom: 20px;
+}
+
+.travel__title {}
+
+.travel__wrapper {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	margin-bottom: 20px;
+}
+
+
+@media (max-width:700px) {
+	.travel__wrapper {
+		grid-template-columns: auto;
+	}
+}
+
+.travel__block {}
+
+.travel__step {
+	font-size: 25px;
+	font-weight: 700;
+	margin-bottom: 30px;
+	letter-spacing: 2px;
+}
+
+.travel__box {
+	display: grid;
+	gap: 15px;
+
+}
+
+.travel__box:not(:last-child) {
+	margin-bottom: 15px;
+
+
+}
+
+.travel__box select {
+	height: 50px;
+}
+
+.travel__desrciption {
+	font-weight: 700;
+	font-size: 16px;
+}
+
+.travel__line {
+	position: relative;
+}
+
+.travel__input-checkbox {}
+
+.travel__input-radio {}
+
+.travel__result {
+	font-weight: 900;
+	font-size: 20px;
+	letter-spacing: 3px;
+}

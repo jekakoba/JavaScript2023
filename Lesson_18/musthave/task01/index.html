@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Must have task№1</title>
+	<link rel="stylesheet" href="../../../css/null.css">
+	<link rel="stylesheet" href="../../../css/dom.css">
+</head>
+
+<body>
+
+	<div class="box">
+		<!-- Практика-->
+		<!-- <div class="block">
+			<div class="inputs"></div>
+			<div class="table-box">
+				<div class="table-box__inputs">
+					<input id="rows" type="number" placeholder="Введіть кількість стовпців">
+					<input id="column" type="number" placeholder="Введіть кількість рядків">
+					<input id="minValue" type="number" placeholder="Введіть мін. число діапазноу">
+					<input id=maxValue type="number" placeholder="Введіть макс. число діапазону">
+					<button class="button" type="button" id="createTable">Намалювати таблицю</button>
+					<table id="table"></table>
+				</div>
+			</div>
+		</div> -->
+
+
+		<!-- Задачі 1, 2 -->
+		<div class="block">
+			<div class="calculator">
+				<h2 class="calculator__title title-dom"> <strong>Задача 1.</strong> <br> Розробити калькулятор</h2>
+				<div class="calculator__box">
+					<div class="calculator__wrapper">
+						<label class="calculator__label" onclick="sum()" for="firstNum">Перше число</label>
+						<input id="firstNum" class="calculator__input" type="text">
+					</div>
+					<div class="calculator__wrapper">
+						<label class="calculator__label" for="secondNum">Друге число</label>
+						<input id="secondNum" class="calculator__input" type="text">
+					</div>
+					<div class="calculator__wrapper calculator__wrapper_buttons">
+						<button onclick="sum()" class="calculator__button" id="sum" type="button">Додати</button>
+						<button class="calculator__button" onclick="difference()" id="difference" type="button">Відняти</button>
+						<button class="calculator__button" onclick="multiply()" id="multiply" type="button">Помножити</button>
+						<button class="calculator__button" onclick="share()" id="share" type="button">Поділити</button>
+					</div>
+					<div class="calculator__wrapper">
+						<label class="calculator__label" for="result">Результат</label>
+						<input id="result" readonly class="calculator__input" type="text">
+					</div>
+				</div>
+			</div>
+			<div class="converter">
+				<h2 class="converter__title title-dom"> <strong>Задача 2.</strong> <br> Зробити конвертер валют (курси валют – константи у скрипті)</h2>
+
+				<div class="converter__box">
+					<label class="converter__label" for="grivnya">Сума в гривнях</label>
+					<input id="grivnya" class="converter__input" type="text">
+				</div>
+				<button id="convert" type="button">Конвертувати</button>
+				<div class="converter__box">
+					<label class="converter__label" for="euro">Сума в євро</label>
+					<input id="euro" class="converter__input" type="text">
+				</div>
+				<div class="converter__box">
+					<label class="converter__label" for="dollars">Сума в доларах</label>
+					<input id="dollars" class="converter__input" type="text">
+				</div>
+			</div>
+		</div>
+		<!-- Задачі 3, 4 -->
+		<div class="block">
+			<div class="birthday">
+				<h2 class="birthday__title title-dom"><strong>Задача 3.</strong><br> Користувач задає рік народження. Визначити кількість років користувача.
+				</h2>
+				<div class="birthday__wrapper">
+					<div class="birthday__box">
+						<label class="birthday__label" for="user-year">Введіть свій рік народження</label>
+						<input id="user" class="birthday__input" type="text">
+					</div>
+					<div class="birthday__result"></div>
+				</div>
+			</div>
+
+			<div class="desire">
+				<h2 class="desire__title title-dom "><strong>Задача 4.</strong> <br> Наперед задано у скрипті масив зі списком бажань. Після завантаження сторінки випадковим чином вибираються 3 і відображаються у окремих div (їх треба створити і
+					додати на сторінку)
+				</h2>
+				<div class="desire__result"></div>
+			</div>
+		</div>
+
+		<!-- Задачі 5, 6 -->
+		<div class="block">
+			<div class="table2">
+				<h2 class="table2__title title-dom"><strong>Задача 5.</strong> <br> Відобразити таблицю 3*4 з випадковими числами (її треба динамічно створити і вставити на сторінку)</h2>
+				<table class="table2__result"></table>
+			</div>
+			<div class="scores">
+				<h2 class="scores__title title-dom"><strong>Задача 6.</strong> <br> Користувач задає кількість оцінок і натискає на кнопку «get table». В результаті формується таблиця з input, куди користувач вводить оцінки. Після цього натискає на
+					кнопку “get sum” і
+					знаходить
+					середнє значення.</h2>
+				<div class="scores__line">
+					<label class="scores__label" for="scores">Введіть кількість оцінок</label>
+					<input id="scores" value="5" type="text">
+				</div>
+				<button id="buttonTable" type="button">Get table</button>
+				<div class="scores__box"></div>
+				<button type="button" id="sumScores">Get sum</button>
+				<div class="scores__result"></div>
+			</div>
+		</div>
+
+		<!-- Задача 7 -->
+		<div class="travel">
+			<h2 class="travel__title title-dom"><strong>Задача 7.</strong> <br> Подорож складається з 3 етапів. На кожному етапі користувач може вибрати один з видів транспорту (авто, автобус, літак - випадаючий список), харчування (сніданок,
+				обід, вечеря – checkbоx) та одного з 3-х гідів(використати - radio buttons). Ціни визначте самі. Підрахувати загальну вартість.</h2>
+			<div class="travel__wrapper">
+				<div class="travel__block">
+					<h3 class="travel__step">Етап 1</h3>
+					<div class="travel__box">
+						<h3 class="travel__desrciption">Виберіть транспорт</h3>
+						<select>
+							<option value="500">Авто</option>
+							<option value="1000">Автобус</option>
+							<option value="3000">Літак</option>
+						</select>
+					</div>
+					<div class="travel__box">
+						<h3 class="travel__desrciption">Виберіть харчуваня</h3>
+						<div class="travel__line">
+							<label for="breakfast">Сніданок</label>
+							<input class="travel__input-checkbox" id="breakfast" value="50" type="checkbox">
+
+						</div>
+						<div class="travel__line">
+							<label for="lunch">Обід</label>
+							<input class="travel__input-checkbox" id="lunch" value="20" type="checkbox">
+						</div>
+						<div class="travel__line">
+							<label for="dinner">Вечеря</label>
+							<input class="travel__input-checkbox" id="dinner" value="70" type="checkbox">
+						</div>
+					</div>
+					<div class="travel__box">
+						<h3 class="travel__desrciption">Виберіть гіда</h3>
+						<div class="travel__line">
+							<label for="jeka">Жека</label>
+							<input class="travel__input-radio" id="jeka" value="10" name="gid" type="radio">
+						</div>
+						<div class="travel__line">
+							<label for="ivan">Іван</label>
+							<input class="travel__input-radio" id="ivan" value="20" name="gid" type="radio">
+						</div>
+						<div class="travel__line">
+							<label for="vasil">Василь</label>
+							<input class="travel__input-radio" id="vasil" value="30" name="gid" type="radio">
+						</div>
+					</div>
+				</div>
+				<div class="travel__block">
+					<h3 class="travel__step">Етап 2</h3>
+					<div class="travel__box">
+						<h3 class="travel__desrciption">Виберіть транспорт</h3>
+						<select>
+							<option value="700">Авто</option>
+							<option value="1200">Автобус</option>
+							<option value="3500">Літак</option>
+						</select>
+					</div>
+					<div class="travel__box">
+						<h3 class="travel__desrciption">Виберіть харчуваня</h3>
+						<div class="travel__line">
+							<label for="breakfast-2">Сніданок</label>
+							<input class="travel__input-checkbox" id="breakfast-2" value="80" type="checkbox">
+						</div>
+						<div class="travel__line">
+							<label for="lunch-2">Обід</label>
+							<input class="travel__input-checkbox" id="lunch-2" value="50" type="checkbox">
+						</div>
+						<div class="travel__line">
+							<label for="dinne-2">Вечеря</label>
+							<input class="travel__input-checkbox" id="dinne-2" value="90" type="checkbox">
+						</div>
+					</div>
+					<div class="travel__box">
+						<h3 class="travel__desrciption">Виберіть гіда</h3>
+						<div class="travel__line">
+							<label for="olga">Ольга</label>
+							<input class="travel__input-radio" id="olga" name="gid-2" value="15" type="radio">
+						</div>
+						<div class="travel__line">
+							<label for="inna">Інна</label>
+							<input class="travel__input-radio" id="inna" name="gid-2" value="30" type="radio">
+						</div>
+						<div class="travel__line">
+							<label for="andrii">Андрій</label>
+							<input class="travel__input-radio" id="andrii" name="gid-2" value="40" type="radio">
+						</div>
+					</div>
+				</div>
+				<div class="travel__block">
+					<h3 class="travel__step">Етап 3</h3>
+					<div class="travel__box">
+						<h3 class="travel__desrciption">Виберіть транспорт</h3>
+						<select>
+							<option value="1000">Авто</option>
+							<option value="1700">Автобус</option>
+							<option value="4000">Літак</option>
+						</select>
+					</div>
+					<div class="travel__box">
+						<h3 class="travel__desrciption">Виберіть харчуваня</h3>
+						<div class="travel__line">
+							<label for="breakfast-3">Сніданок</label>
+							<input class="travel__input-checkbox" id="breakfast-3" value="50" type="checkbox">
+						</div>
+						<div class="travel__line">
+							<label for="lunch-3">Обід</label>
+							<input class="travel__input-checkbox" id="lunch-3" value="20" type="checkbox">
+						</div>
+						<div class="travel__line">
+							<label for="dinner-3">Вечеря</label>
+							<input class="travel__input-checkbox" id="dinner-3" value="70" type="checkbox">
+						</div>
+					</div>
+					<div class="travel__box">
+						<h3 class="travel__desrciption">Виберіть гіда</h3>
+						<div class="travel__line">
+							<label for="bogdan">Богдан</label>
+							<input class="travel__input-radio" id="bogdan" name="gid-3" value="100" type="radio">
+						</div>
+						<div class="travel__line">
+							<label for="ishtvan">Іштван</label>
+							<input class="travel__input-radio" id="ishtvan" name="gid-3" value="200" type="radio">
+						</div>
+						<div class="travel__line">
+							<label for="petro">Петро</label>
+							<input class="travel__input-radio" id="petro" name="gid-3" value="300" type="radio">
+						</div>
+					</div>
+				</div>
+			</div>
+			<button id="totalPrice" type="button">Розрахувати вартість</button>
+			<div class="travel__result"></div>
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+
+</html>
